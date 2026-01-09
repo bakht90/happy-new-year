@@ -1,0 +1,41 @@
+body {  
+  margin: 0;
+  overflow: hidden;
+}
+.scene {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to top, #87ceeb, #ccefff);
+  position: relative;
+  overflow: hidden;
+}
+.road {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: repeating-linear-gradient(
+    to right,
+    #555,
+    #555 50px,
+    #777 50px,
+    #777 60px
+  );
+  z-index: 1;
+}
+.car {
+  position: absolute;
+  bottom: 20px;     
+  width: 630px;       
+  left: 100vw;       
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  z-index: 2;
+  animation: drive 14s linear infinite;
+}
+
+@keyframes drive {
+  from { transform: translateX(0); }                        
+  to   { transform: translateX(calc(-100vw - 320px)); }    
+}
